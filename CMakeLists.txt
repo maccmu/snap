@@ -1,0 +1,25 @@
+# CMake project definition for Snap.
+#
+# The upstream provides Makefiles for building the project. However, for
+# macposts we would like to have a CMake project for easy integration.
+
+cmake_minimum_required(VERSION 3.10)
+
+project(Snap)
+set(CMAKE_CXX_STANDARD 98)
+find_package(OpenMP)
+
+add_library(snap STATIC snap-core/Snap.cpp)
+
+target_include_directories(snap
+  INTERFACE snap-core
+  PUBLIC glib-core
+  )
+
+if (OpenMP_CXX_FOUND)
+  target_link_libraries(snap PUBLIC OpenMP::OpenMP_CXX)
+endif()
+
+if (UNIX AND NOT APPLE)
+  target_link_libraries(snap PRIVATE rt)
+endif()
