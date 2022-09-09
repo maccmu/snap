@@ -3,42 +3,6 @@
 #endif
 
 /////////////////////////////////////////////////
-// Mathmatical-Errors
-#if defined(__GNUC__) && (__GNUC__ >= 6)
-// skips matherr handling as matherr not supported in g++ 6 or later
-#elif defined(__BCPLUSPLUS__) && (__BCPLUSPLUS__==0x0530)
-int std::_matherr(struct math_exception* e){
-  e->retval=0;
-  return 1;
-}
-#elif defined(GLib_GLIBC) || defined(GLib_BSD)
-int _matherr(struct __exception* e){
-  e->retval=0;
-  return 1;
-}
-#elif defined(GLib_SOLARIS)
-int _matherr(struct __math_exception* e){
-  e->retval=0;
-  return 1;
-}
-#elif defined(GLib_CYGWIN)
-int matherr(struct __exception *e){
-  e->retval=0;
-  return 1;
-}
-#elif defined(GLib_MACOSX)
-//int matherr(struct exception *e) {
-//  e->retval=0;
-//  return 1;
-//}
-#else
-int _matherr(struct _exception* e){
-  e->retval=0;
-  return 1;
-}
-#endif
-
-/////////////////////////////////////////////////
 // Messages
 void WrNotify(const char* CaptionCStr, const char* NotifyCStr){
 #if defined(__CONSOLE__) || defined(_CONSOLE)
