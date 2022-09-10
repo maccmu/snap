@@ -17,7 +17,7 @@ target_include_directories(snap
   )
 
 if (OpenMP_CXX_FOUND)
-  target_link_libraries(snap PUBLIC OpenMP::OpenMP_CXX)
+  target_link_libraries(snap PRIVATE OpenMP::OpenMP_CXX)
 else()
   # NOTE: From Makefile.config (for Darwin build). Not sure what it does.
   target_compile_definitions(snap PRIVATE NOMP)
