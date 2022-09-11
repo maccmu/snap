@@ -387,7 +387,7 @@ TIntH MaxCPGreedyBetter3(const PUNGraph& Graph, const int k) {
     printf("%i,",br);
   }
 
-  delete NNodes;
+  delete[] NNodes;
   // gcFinal = GetGroupDegreeCentr(Graph, GroupNodes);
   return GroupNodes;
 }

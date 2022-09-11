@@ -1675,7 +1675,7 @@ protected:
 				else comment += char(c); }
 				/*first = false;*/}
 	private:
-		TUcdFileReader& operator = (const TUcdFileReader& r) { Fail; return *((TUcdFileReader *) 0); }
+		TUcdFileReader& operator = (const TUcdFileReader& r) { Fail; throw std::logic_error("unreachable"); }
 		TUcdFileReader(const TUcdFileReader& r) { Fail; }
 	public:
 		TUcdFileReader() : f(0) { }
@@ -2819,7 +2819,7 @@ void TUniChDb::GetCaseConverted(const TSrcVec& src, size_t srcIdx, const size_t 
 								const TUniChDb::TCaseConversion how,
 								const bool turkic, const bool lithuanian) const
 {
-	const TIntIntVH &specials = (how == ccUpper ? specialCasingUpper : how == ccLower ? specialCasingLower : how == ccTitle ? specialCasingTitle : *((TIntIntVH *) 0));
+	const TIntIntVH &specials = (how == ccUpper ? specialCasingUpper : how == ccLower ? specialCasingLower : how == ccTitle ? specialCasingTitle : throw std::logic_error("unreachable"));
 	if (clrDest) dest.Clr();
 	enum {
 		GreekCapitalLetterSigma = 0x3a3,
@@ -3020,7 +3020,7 @@ void TUniChDb::GetCaseConverted(const TSrcVec& src, size_t srcIdx, const size_t 
 			howHere == how ? specials :
 			howHere == ccLower ? specialCasingLower :
 			howHere == ccTitle ? specialCasingTitle :
-			howHere == ccUpper ? specialCasingUpper : *((TIntIntVH *) 0));
+			howHere == ccUpper ? specialCasingUpper : throw std::logic_error("unreachable"));
 		int i = specHere.GetKeyId(cp);
 		if (i >= 0) { TUniCaseFolding::AppendVector(specHere[i], dest); continue; }
 		// Try to use the simple (one-character) mappings.
