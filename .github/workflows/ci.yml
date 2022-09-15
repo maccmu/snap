@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [macposts]
+  pull_request:
+    branches: [macposts]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [ubuntu-latest, windows-latest, macos-latest]
+
+    runs-on: ${{ matrix.platform }}
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Configure
+      run: cmake -S . -B .
+
+    - name: Build
+      run: cmake --build .
