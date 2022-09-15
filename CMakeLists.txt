@@ -26,3 +26,9 @@ endif()
 if (UNIX AND NOT APPLE)
   target_link_libraries(snap PRIVATE rt)
 endif()
+
+# MSVC with its defaults bails out on Snap.o (on GitHub Actions
+# "windows-latest").
+if (MSVC)
+  target_compile_options(snap PRIVATE /bigobj)
+endif()
