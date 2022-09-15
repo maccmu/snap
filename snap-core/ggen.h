@@ -264,4 +264,4 @@ TIntPr GetRndEdgeNonAdjNode(const PGraph& Graph, int NId1, int NId2) {
 
 } // namespace TSnapDetail
 
-}; // namespace TSnap
+} // namespace TSnap

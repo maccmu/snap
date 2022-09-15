@@ -658,5 +658,5 @@ void MapHits(const TVec<PGraph>& GraphSeq, TVec<PTable>& TableSeq,
   }
 }
 
-}; // namespace TSnap
+} // namespace TSnap
 

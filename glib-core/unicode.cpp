@@ -53,7 +53,7 @@ void AssertEq(const TIntV& v1, const TIntV& v2, const TStr& explanation, FILE *f
 	}
 }
 
-};
+}
 
 //-----------------------------------------------------------------------------
 // TUniCodec -- miscellaneous declarations

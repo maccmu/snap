@@ -73,4 +73,4 @@ namespace TSnapDetail {
 double GetInvParticipRatEig(const TFltV& EigVec);
 } // namespace TSnapDetail
 
-}; // namespace TSnap
+} // namespace TSnap

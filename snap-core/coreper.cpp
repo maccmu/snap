@@ -223,4 +223,4 @@ namespace TSnap {
     return (double)(core_quality+periphery_quality);
   }
 
-}; //namespace TSnap
+} //namespace TSnap

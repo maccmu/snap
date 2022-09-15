@@ -144,6 +144,6 @@ template <class PGraph>
                                                 minProbability, relativeError, proveRelativeError, PrintTimeForTuning);
   }
 
-}; // namespace TSnap
+} // namespace TSnap
 
 #endif

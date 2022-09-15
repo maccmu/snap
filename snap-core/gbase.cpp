@@ -16,7 +16,7 @@ TStr GetFlagStr(const TGraphFlag& GraphFlag) {
   return TStr();
 }
 
-};  // namespace TSnap
+}  // namespace TSnap
 
 /////////////////////////////////////////////////
 // Union Find

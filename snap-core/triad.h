@@ -773,7 +773,7 @@ void GetUniqueNbrV(const PGraph& Graph, const int& NId, TIntV& NbrV) {
   }
 }
 
-}; // mamespace TSnap
+} // mamespace TSnap
 
 /////////////////////////////////////////////////
 // Node and Edge Network Constraint (by Ron Burt)

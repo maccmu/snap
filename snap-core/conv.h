@@ -2519,7 +2519,7 @@ inline PGraphMP ToNetworkMP(PTable Table,
 }
 #endif // GCC_ATOMIC
 
-}; // TSnap namespace
+} // TSnap namespace
 
 #endif // CONV_H
 

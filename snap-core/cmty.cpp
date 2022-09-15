@@ -1450,4 +1450,4 @@ double CommunityCNM(const PUNGraph& Graph, TCnComV& CmtyV) {
   return TSnapDetail::TCNMQMatrix::CmtyCMN(Graph, CmtyV);
 }
 
-}; //namespace TSnap
+} //namespace TSnap

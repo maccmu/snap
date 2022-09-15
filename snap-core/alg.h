@@ -541,4 +541,4 @@ void GetTreeSig(const PGraph& Graph, const int& RootNId, TIntV& Sig, TIntPrV& No
   }
 }
 
-}; // namespace TSnap
+} // namespace TSnap

@@ -46,7 +46,7 @@ void Get1CnCom(const PUNGraph& Graph, TCnComV& Cn1ComV);
 /// Returns a graph representing the largest bi-connected component on an undirected Graph. ##GetMxBiCon
 PUNGraph GetMxBiCon(const PUNGraph& Graph, const bool& RenumberNodes=false);
 
-}; // namespace TSnap
+} // namespace TSnap
 
 //#//////////////////////////////////////////////
 /// Connected Component.

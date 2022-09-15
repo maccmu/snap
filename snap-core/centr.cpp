@@ -923,4 +923,4 @@ TTableIterator GetMapHitsIterator(
   return TTableIterator(TableSeq);
 }
 
-}; // namespace TSnap
+} // namespace TSnap

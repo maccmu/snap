@@ -405,7 +405,7 @@ int TFIn::FindEol(int& BfN, bool& CrEnd) {
 
 /////////////////////////////////////////////////
 // Output-File
-const TSize TFOut::MxBfL=16*1024;;
+const TSize TFOut::MxBfL=16*1024;
 
 void TFOut::FlushBf(){
   EAssertR(

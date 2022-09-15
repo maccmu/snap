@@ -345,4 +345,4 @@ TVec<PNGraph> LoadDyNetGraphV(const TStr& FNm) {
   return GraphV;
 }
 
-}; // namespace TSnap
+} // namespace TSnap

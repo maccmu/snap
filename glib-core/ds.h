@@ -2052,7 +2052,7 @@ void TVecPool<TVal>::ShuffleAll(TRnd& Rnd) {
   }
 }
 
-}; // namespace TGLib_OLD
+} // namespace TGLib_OLD
 
 typedef TVecPool<TInt> TIntVecPool;
 typedef TPt<TIntVecPool> PIntVecPool;

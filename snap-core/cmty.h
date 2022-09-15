@@ -90,4 +90,4 @@ void GetEdgesInOut(const PGraph& Graph, const TIntV& NIdV, int& EdgesIn, int& Ed
   EdgesIn /= 2;
 }
 
-}; // namespace TSnap
+} // namespace TSnap

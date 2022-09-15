@@ -125,4 +125,4 @@ int LoadCrossNet(TCrossNet& Graph, PTable Table, const TStr& SrcCol, const TStr&
   return 1;
 }
 
-}; //namespace TSnap
+} //namespace TSnap

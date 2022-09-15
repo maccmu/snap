@@ -4,7 +4,7 @@
 // Forward
 class TILx;
 class TOLx;
-ClassHdTP(TXmlTok, PXmlTok);
+ClassHdTP(TXmlTok, PXmlTok)
 
 /////////////////////////////////////////////////
 // Random

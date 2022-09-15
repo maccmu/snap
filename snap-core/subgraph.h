@@ -138,7 +138,7 @@ struct TGetSubGraph<PGraph, false> { // not multigraph
     return NewGraphPt;
   }
 };
-}; // TSnapDetail
+} // TSnapDetail
 
 template<class PGraph> 
 PGraph GetSubGraph(const PGraph& Graph, const TIntV& NIdV) {
