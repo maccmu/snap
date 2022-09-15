@@ -22,4 +22,4 @@ jobs:
       run: cmake -S . -B .
 
     - name: Build
-      run: cmake --build .
+      run: cmake --build . --verbose
