@@ -19,10 +19,17 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Configure
-      run: cmake -DSNAP_BUILD_TESTS=ON -S . -B .
+      shell: bash
+      run: |
+        if [ "$RUNNER_OS" == 'Windows' ]; then
+          cmake -DSNAP_BUILD_TESTS=OFF -S . -B .
+        else
+          cmake -DSNAP_BUILD_TESTS=ON -S . -B .
+        fi
 
     - name: Build
       run: cmake --build . --verbose
 
     - name: Test
       run: ctest
+      if: runner.os != 'Windows'
