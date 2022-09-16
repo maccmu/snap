@@ -24,7 +24,7 @@ int BuildCapacityNetwork(const TStr& InFNm, PNEANet &Net, const int& SrcColId = 
   return MaxCap;
 }
 
-TEST(FlowTest, BasicTest) {
+TEST(FlowTest, DISABLED_BasicTest) {
   PNEANet Net;
   BuildCapacityNetwork("flow/small_sample.txt", Net);
   int PRFlow1 = TSnap::GetMaxFlowIntPR(Net, 53, 2);

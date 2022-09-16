@@ -7,7 +7,7 @@ class RandWalkTest { };  // For gtest highlighting
 
 using namespace TSnap;
 
-TEST(RandWalkTest, CorrectOnSmallGraph) {
+TEST(RandWalkTest, DISABLED_CorrectOnSmallGraph) {
   PNGraph graph = TSnap::LoadEdgeList<PNGraph>("randwalk/test_graph.txt", false);
   FILE* truePPRFile = fopen ("randwalk/test_pprs.txt","r");
   int s, t;

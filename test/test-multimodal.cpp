@@ -1126,7 +1126,7 @@ TEST(multimodal, ClrMode2SameModeUndirected) {
   EXPECT_EQ(0, C1.GetEdges());
 }
 
-TEST(multimodal, GetSubgraph) {
+TEST(multimodal, DISABLED_GetSubgraph) {
   int NNodes = 1000;
   int NEdges = 1000;
 

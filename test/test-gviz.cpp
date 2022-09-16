@@ -12,7 +12,7 @@ using namespace TSnap;
 #define DIRNAME "graphviz"
 
 // Test drawing of SNAP graphs using GraphViz with color labeling
-TEST(GVizTest, DrawGViz) {
+TEST(GVizTest, DISABLED_DrawGViz) {
 
   PUNGraph UNGraph1;
   UNGraph1 = LoadEdgeList<PUNGraph>(TStr::Fmt("%s/sample_ungraph1.txt", DIRNAME));
@@ -75,7 +75,7 @@ TEST(GVizTest, DrawGViz) {
 }
 
 // Test drawing of SNAP graphs using GraphViz with color labeling
-TEST(GVizTest, DrawGVizColor) {
+TEST(GVizTest, DISABLED_DrawGVizColor) {
   
   PUNGraph UNGraph1;
   UNGraph1 = LoadEdgeList<PUNGraph>(TStr::Fmt("%s/sample_ungraph1.txt",

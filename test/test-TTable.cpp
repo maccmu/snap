@@ -11,7 +11,7 @@ TEST(TTable, DefaultConstructor) {
 }
 
 // Tests load and save from text file.
-TEST(TTable, LoadSave) {
+TEST(TTable, DISABLED_LoadSave) {
   TTableContext Context;
   // Create schema.
   Schema GradeS;
@@ -49,7 +49,7 @@ TEST(TTable, LoadSave) {
 }
 
 // Tests parallel select function.
-TEST(TTable, ParallelSelect) {
+TEST(TTable, DISABLED_ParallelSelect) {
   TTableContext Context;
 
   // TODO: Change this to point to a local copy of the LiveJournal table binary.
@@ -75,7 +75,7 @@ TEST(TTable, ParallelSelect) {
 }
 
 // Tests parallel select in-place function.
-TEST(TTable, ParallelSelectInPlace) {
+TEST(TTable, DISABLED_ParallelSelectInPlace) {
   TTableContext Context;
 
   Schema LJS;
@@ -95,7 +95,7 @@ TEST(TTable, ParallelSelectInPlace) {
 }
 
 // Tests parallel join function.
-TEST(TTable, ParallelJoin) {
+TEST(TTable, DISABLED_ParallelJoin) {
   TTableContext Context;
 
   Schema LJS;
@@ -120,7 +120,7 @@ TEST(TTable, ParallelJoin) {
 }
 
 // Tests sequential table to graph function.
-TEST(TTable, ToGraph) {
+TEST(TTable, DISABLED_ToGraph) {
   TTableContext Context;
 
   Schema LJS;

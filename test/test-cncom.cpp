@@ -62,7 +62,7 @@ void TestFull() {
 }
 
 // Get connected components on undirected graph that is not fully connected
-TEST(CnComTest, UndirectedDisconnected) {
+TEST(CnComTest, DISABLED_UndirectedDisconnected) {
   
   PUNGraph G;
 
@@ -180,7 +180,7 @@ TEST(CnComTest, UndirectedDisconnected) {
 }
 
 // Get connected components on directed graph that is not fully connected
-TEST(CnComTest, DirectedDisconnected) {
+TEST(CnComTest, DISABLED_DirectedDisconnected) {
   
   PNGraph G;
   

@@ -113,7 +113,7 @@ void TestFullBfsDfs() {
 }
 
 // Test BFS functions on undirected graph that is not fully connected
-TEST(BfsDfsTest, UndirectedRandom) {
+TEST(BfsDfsTest, DISABLED_UndirectedRandom) {
   
   PUNGraph G;
 
@@ -208,7 +208,7 @@ TEST(BfsDfsTest, UndirectedRandom) {
 }
 
 // Test BFS functions on directed graph that is not fully connected
-TEST(BfsDfsTest, DirectedRandom) {
+TEST(BfsDfsTest, DISABLED_DirectedRandom) {
   
   PNGraph G = TNGraph::New();
   
