@@ -324,7 +324,7 @@ public:
 
 //#//////////////////////////////////////////////
 /// Iterator class for TTable rows. ##Iterator
-class TRowIterator{
+class TRowIterator: TBase{
   TInt CurrRowIdx; ///< Physical row index of current row pointed by iterator.
   const TTable* Table; ///< Reference to table containing this row.
 public:
@@ -368,7 +368,7 @@ public:
 
 //#//////////////////////////////////////////////
 /// Iterator class for TTable rows, that allows logical row removal while iterating.
-class TRowIteratorWithRemove {
+class TRowIteratorWithRemove: TBase {
   TInt CurrRowIdx; ///< Physical row index of current row pointer by iterator.
   TTable* Table; ///< Reference to table containing this row.
   TBool Start;	///< A flag indicating whether the current row in the first valid row of the table.

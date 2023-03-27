@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////
 // Wide-Char
-class TWCh{
+class TWCh: TBase{
 private:
   uchar MsVal;
   uchar LsVal;

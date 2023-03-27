@@ -1,6 +1,8 @@
 #ifndef bd_h
 #define bd_h
 
+#include <type_traits>
+
 /////////////////////////////////////////////////
 // Basic-Macro-Definitions
 #define forever for(;;)
@@ -124,24 +126,32 @@ inline void StatNotify(const char* NotifyCStr){
 
 /////////////////////////////////////////////////
 // Class-Definition
+
+// Marker class for data types defined in SNAP.
+//
+// This is to avoid some overloaded functions/operators being overly
+// generalized, which could lead to compilation errors if, e.g., we also use the
+// STL in our application.
+class TBase {};
+
 #define ClassT(TNm) \
-class TNm{
+class TNm: TBase{
 
 #define ClassTV(TNm, TNmV) \
 class TNm; \
 typedef TVec<TNm> TNmV; \
-class TNm{
+class TNm: TBase{
 
 #define ClassTVQ(TNm, TNmV, TNmQ) \
 class TNm; \
 typedef TVec<TNm> TNmV; \
 typedef TQQueue<TNm> TNmQ; \
-class TNm{
+class TNm: TBase{
 
 #define ClassTP(TNm, PNm) \
 class TNm; \
 typedef TPt<TNm> PNm; \
-class TNm{ \
+class TNm: TBase{ \
 private: \
   TCRef CRef; \
 public: \
@@ -154,7 +164,7 @@ typedef TPt<TNm> PNm;
 #define ClassTPE(TNm, PNm, ENm) \
 class TNm; \
 typedef TPt<TNm> PNm; \
-class TNm: public ENm{ \
+class TNm: public ENm, TBase{ \
 private: \
   TCRef CRef; \
 public: \
@@ -163,7 +173,7 @@ public: \
 #define ClassTPEE(TNm, PNm, ENm1, ENm2) \
 class TNm; \
 typedef TPt<TNm> PNm; \
-class TNm: public ENm1, public ENm2{ \
+class TNm: public ENm1, public ENm2, TBase{ \
 private: \
   TCRef CRef; \
 public: \
@@ -171,14 +181,14 @@ public: \
 
 #define ClassTE(TNm, ENm) \
 class TNm; \
-class TNm: public ENm{ \
+class TNm: public ENm, TBase{ \
 public: \
 
 #define ClassTPV(TNm, PNm, TNmV) \
 class TNm; \
 typedef TPt<TNm> PNm; \
 typedef TVec<PNm> TNmV; \
-class TNm{ \
+class TNm: TBase{ \
 private: \
   TCRef CRef; \
 public: \
@@ -195,7 +205,7 @@ typedef TPt<TNm> PNm; \
 typedef TVec<PNm> TNmV; \
 typedef TLst<PNm> TNmL; \
 typedef TLstNd<PNm>* TNmLN; \
-class TNm{ \
+class TNm: TBase{ \
 private: \
   TCRef CRef; \
 public: \
@@ -426,19 +436,24 @@ public:
 /////////////////////////////////////////////////
 // Operator-Definitions
 template <class TRec>
-bool operator!=(const TRec& Rec1, const TRec& Rec2){return !(Rec1==Rec2);}
+typename std::enable_if<std::is_base_of<TBase, TRec>::value, bool>::type
+operator!=(const TRec& Rec1, const TRec& Rec2){return !(Rec1==Rec2);}
 
 template <class TRec>
-bool operator>(const TRec& Rec1, const TRec& Rec2){return Rec2<Rec1;}
+typename std::enable_if<std::is_base_of<TBase, TRec>::value, bool>::type
+operator>(const TRec& Rec1, const TRec& Rec2){return Rec2<Rec1;}
 
 template <class TRec>
-bool operator<=(const TRec& Rec1, const TRec& Rec2){return !(Rec2<Rec1);}
+typename std::enable_if<std::is_base_of<TBase, TRec>::value, bool>::type
+operator<=(const TRec& Rec1, const TRec& Rec2){return !(Rec2<Rec1);}
 
 template <class TRec>
-bool operator>=(const TRec& Rec1, const TRec& Rec2){return !(Rec1<Rec2);}
+typename std::enable_if<std::is_base_of<TBase, TRec>::value, bool>::type
+operator>=(const TRec& Rec1, const TRec& Rec2){return !(Rec1<Rec2);}
 
 template <class TRec>
-bool Cmp(const int& RelOp, const TRec& Rec1, const TRec& Rec2){
+typename std::enable_if<std::is_base_of<TBase, TRec>::value, bool>::type
+Cmp(const int& RelOp, const TRec& Rec1, const TRec& Rec2){
   switch (RelOp){
     case roLs: return Rec1<Rec2;
     case roLEq: return Rec1<=Rec2;

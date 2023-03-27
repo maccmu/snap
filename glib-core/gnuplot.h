@@ -13,7 +13,7 @@ typedef enum {
   gpwSteps, gpwFSteps, gpwHiSteps, gpwBoxes, gpwErrBars, gpwFilledCurves, gpwMax
 } TGpSeriesTy;
 
-class TGnuPlot {
+class TGnuPlot: TBase {
 public:
   /// Path to GnuPlot executable. Set if gnuplot is not found in the PATH.
   static TStr GnuPlotPath;
@@ -22,7 +22,7 @@ public:
   static TStr DefPlotFNm;
   static TStr DefDataFNm;
 private:
-  class TGpSeries {
+  class TGpSeries: TBase {
   public:
     TGpSeriesTy SeriesTy;
     TFltKdV XYValV;

@@ -147,7 +147,7 @@ public:
     friend class TCrossNet;
   };
    /// Edge iterator. Only forward iteration (operator++) is supported.
-  class TCrossEdgeI {
+  class TCrossEdgeI: TBase {
   private:
     typedef THash<TInt, TCrossEdge>::TIter THashIter;
     THashIter CrossHI;
@@ -180,7 +180,7 @@ public:
   };
 
   /// Node/edge integer attribute iterator. Iterates through all nodes/edges for one integer attribute.
-  class TAIntI {
+  class TAIntI: TBase {
   private:
     typedef TIntV::TIter TIntVecIter;
     TIntVecIter HI;
@@ -202,7 +202,7 @@ public:
   };
 
   /// Node/edge string attribute iterator. Iterates through all nodes/edges for one string attribute.
-  class TAStrI {
+  class TAStrI: TBase {
   private:
     typedef TStrV::TIter TStrVecIter;
     TStrVecIter HI;
@@ -224,7 +224,7 @@ public:
   };
 
   /// Node/edge float attribute iterator. Iterates through all nodes/edges for one float attribute.
-  class TAFltI {
+  class TAFltI: TBase {
   private:
     typedef TFltV::TIter TFltVecIter;
     TFltVecIter HI;
@@ -495,7 +495,7 @@ class TMMNet {
 
 public:
   /// TModeNet iterator. Only forward iteration (operator++) is supported.
-  class TModeNetI {
+  class TModeNetI: TBase {
   protected:
     typedef THash<TInt, TModeNet>::TIter THashIter;
     THashIter ModeNetHI;
@@ -519,7 +519,7 @@ public:
   };
 
   /// TCrossNet iterator. Only forward iteration (operator++) is supported.
-  class TCrossNetI {
+  class TCrossNetI: TBase {
   protected:
     typedef THash<TInt, TCrossNet>::TIter THashIter;
     THashIter CrossNetHI;

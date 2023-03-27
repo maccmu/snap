@@ -492,7 +492,7 @@ public:
   };
 
   /// Node iterator. Only forward iteration (operator++) is supported.
-  class TNodeI {
+  class TNodeI: TBase {
   private:
     typedef typename THash<TInt, TNode>::TIter THashIter;
     THashIter NodeHI;
@@ -1048,7 +1048,7 @@ public:
   };
 
   /// Node iterator. Only forward iteration (operator++) is supported.
-  class TNodeI {
+  class TNodeI: TBase {
   private:
     typedef typename THash<TInt, TNode>::TIter THashIter;
     THashIter NodeHI;
@@ -1588,7 +1588,7 @@ public:
   typedef TNEANet TNet;
   typedef TPt<TNEANet> PNet;
 public:
-  class TNode {
+  class TNode: TBase {
   private:
     TInt Id;
     TIntV InEIdV, OutEIdV;
@@ -1614,7 +1614,7 @@ public:
     }
     friend class TNEANet;
   };
-  class TEdge {
+  class TEdge: TBase {
   private:
     TInt Id, SrcNId, DstNId;
   public:
@@ -1634,7 +1634,7 @@ public:
     friend class TNEANet;
   };
   /// Node iterator. Only forward iteration (operator++) is supported.
-  class TNodeI {
+  class TNodeI: TBase {
   protected:
     typedef THash<TInt, TNode>::TIter THashIter;
     THashIter NodeHI;
@@ -1703,7 +1703,7 @@ public:
     friend class TNEANet;
   };
   /// Edge iterator. Only forward iteration (operator++) is supported.
-  class TEdgeI {
+  class TEdgeI: TBase {
   private:
     typedef THash<TInt, TEdge>::TIter THashIter;
     THashIter EdgeHI;
@@ -1747,7 +1747,7 @@ public:
   };
 
   /// Node/edge integer attribute iterator. Iterates through all nodes/edges for one integer attribute.
-  class TAIntI {
+  class TAIntI: TBase {
   private:
     typedef TIntV::TIter TIntVecIter;
     TIntVecIter HI;
@@ -1769,7 +1769,7 @@ public:
     friend class TNEANet;
   };
 
-  class TAIntVI {
+  class TAIntVI: TBase {
   private:
     typedef TVec<TIntV>::TIter TIntVVecIter;
     TIntVVecIter HI;
@@ -1794,7 +1794,7 @@ public:
     friend class TNEANet;
   };
 
-  class TAFltVI {
+  class TAFltVI: TBase {
   private:
     typedef TVec<TFltV>::TIter TFltVVecIter;
     TFltVVecIter HI;
@@ -1820,7 +1820,7 @@ public:
   };
 
   /// Node/edge string attribute iterator. Iterates through all nodes/edges for one string attribute.
-  class TAStrI {
+  class TAStrI: TBase {
   private:
     typedef TStrV::TIter TStrVecIter;
     TStrVecIter HI;
@@ -3214,7 +3214,7 @@ public:
     friend class TUndirNetMtx;
   };
   /// Node iterator. Only forward iteration (operator++) is supported.
-  class TNodeI {
+  class TNodeI: TBase {
   private:
     typedef THash<TInt, TNode>::TIter THashIter;
     THashIter NodeHI;
@@ -3694,7 +3694,7 @@ public:
     friend class TDirNetMtx;
   };
   /// Node iterator. Only forward iteration (operator++) is supported.
-  class TNodeI {
+  class TNodeI: TBase {
   private:
     typedef THash<TInt, TNode>::TIter THashIter;
     THashIter NodeHI;

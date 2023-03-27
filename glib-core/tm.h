@@ -78,7 +78,7 @@ public:
 // Seconds-Time
 // NOTE: Time origin is relative to time zone. Regardless of computer time
 // zone second 0 maps to "Jan 1 1970 00:00" (so time zone information is lost)
-class TSecTm {
+class TSecTm: TBase {
 private:
   TUInt AbsSecs; // pretend that local time zone is UTC
 private:

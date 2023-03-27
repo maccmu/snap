@@ -26,12 +26,12 @@ typedef TPt<TNEGraph> PNEGraph;
 
 //#//////////////////////////////////////////////
 /// Undirected graph. ##TUNGraph::Class
-class TUNGraph {
+class TUNGraph: TBase{
 public:
   typedef TUNGraph TNet;
   typedef TPt<TUNGraph> PNet;
 public:
-  class TNode {
+  class TNode: TBase{
   private:
     TInt Id;
     TIntV NIdV;
@@ -62,7 +62,7 @@ public:
     friend class TUNGraphMtx;
   };
   /// Node iterator. Only forward iteration (operator++) is supported.
-  class TNodeI {
+  class TNodeI: TBase{
   private:
     typedef THash<TInt, TNode>::TIter THashIter;
     THashIter NodeHI;
@@ -106,7 +106,7 @@ public:
     friend class TUNGraph;
   };
   /// Edge iterator. Only forward iteration (operator++) is supported.
-  class TEdgeI {
+  class TEdgeI: TBase{
   private:
     TNodeI CurNode, EndNode;
     int CurEdge;
@@ -295,7 +295,7 @@ public:
     friend class TNGraphMtx;
   };
   /// Node iterator. Only forward iteration (operator++) is supported.
-  class TNodeI {
+  class TNodeI: TBase {
   private:
     typedef THash<TInt, TNode>::TIter THashIter;
     THashIter NodeHI;
@@ -538,7 +538,7 @@ public:
     friend class TNEGraph;
   };
   /// Node iterator. Only forward iteration (operator++) is supported.
-  class TNodeI {
+  class TNodeI: TBase {
   private:
     typedef THash<TInt, TNode>::TIter THashIter;
     THashIter NodeHI;
@@ -764,7 +764,7 @@ public:
     friend class TBPGraph;
   };
   /// Node iterator. Only forward iteration (operator++) is supported.
-  class TNodeI {
+  class TNodeI: TBase {
   private:
     typedef THash<TInt, TNode>::TIter THashIter;
     THashIter LeftHI, RightHI; // iterator over left and right hand-side nodes
@@ -1033,7 +1033,7 @@ public:
     friend class THGraph;
   };
   /// Node Iterator
-  class TNodeI {
+  class TNodeI: TBase {
   private:
     typedef THash<TInt, TNode>::TIter THashIter;
     THashIter NodeHI;

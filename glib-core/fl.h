@@ -8,7 +8,7 @@ class TStr;
 
 /////////////////////////////////////////////////
 // Check-Sum
-class TCs{
+class TCs: TBase{
 private:
   static const int MxMask;
   int Val;

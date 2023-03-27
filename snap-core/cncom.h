@@ -51,7 +51,7 @@ PUNGraph GetMxBiCon(const PUNGraph& Graph, const bool& RenumberNodes=false);
 //#//////////////////////////////////////////////
 /// Connected Component.
 /// Connected component is defined by a vector of its node IDs.
-class TCnCom {
+class TCnCom: TBase {
 public:
   TIntV NIdV;
 public:

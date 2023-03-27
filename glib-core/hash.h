@@ -46,7 +46,7 @@ public:
 /////////////////////////////////////////////////
 // Hash-Table-Key-Data-Iterator
 template<class TKey, class TDat>
-class THashKeyDatI{
+class THashKeyDatI: TBase{
 public:
   typedef THashKeyDat<TKey, TDat> THKeyDat;
 private:

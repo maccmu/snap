@@ -50,7 +50,7 @@ public:
     friend class TNEANetMP;
   };
   /// Node iterator. Only forward iteration (operator++) is supported.
-  class TNodeI {
+  class TNodeI: TBase {
   private:
     typedef THashMP<TInt, TNode>::TIter THashIter;
     THashIter NodeHI;

@@ -34,7 +34,7 @@ public:
     bool IsUnused() const { return InVId==-1 && OutVId==-1; }
   };
   /// Node iterator. ##TBigNet::TNodeI
-  class TNodeI {
+  class TNodeI: TBase {
   protected:
     typedef typename TNodeH::TIter THashIter;
     THashIter NodeHI;

@@ -8,7 +8,7 @@ ClassHdTP(TXmlTok, PXmlTok)
 
 /////////////////////////////////////////////////
 // Random
-class TRnd{
+class TRnd: TBase{
 public:
   static const int RndSeed;
 private:
@@ -155,7 +155,7 @@ public:
 
 /////////////////////////////////////////////////
 // Input-Memory
-class TMemIn: public TSIn{
+class TMemIn: public TSIn, TBase{
 private:
   PMem Mem;
   const char* Bf;
@@ -179,7 +179,7 @@ public:
 
 /////////////////////////////////////////////////
 // Output-Memory
-class TMemOut: public TSOut{
+class TMemOut: public TSOut, TBase{
 private:
   PMem Mem;
 private:
@@ -198,7 +198,7 @@ public:
 
 /////////////////////////////////////////////////
 // Char-Array
-class TChA{
+class TChA: TBase{
 private:
   int MxBfL, BfL;
   char* Bf;
@@ -319,7 +319,7 @@ public:
 
 /////////////////////////////////////////////////
 // Input-Char-Array
-class TChAIn: public TSIn{
+class TChAIn: public TSIn, TBase{
 private:
   const char* Bf;
   int BfC, BfL;
@@ -343,7 +343,7 @@ public:
 
 /////////////////////////////////////////////////
 // Ref-String
-class TRStr{
+class TRStr: TBase{
 public:
   char* Bf;
   int Refs;
@@ -409,7 +409,7 @@ class TStr;
 template <class TVal, class TSizeTy> class TVec;
 typedef TVec<TStr, int> TStrV;
 
-class TStr{
+class TStr: TBase{
 private:
   TRStr* RStr;
 private:
@@ -697,7 +697,7 @@ public:
 
 /////////////////////////////////////////////////
 // Input-String
-class TStrIn: public TSIn{
+class TStrIn: public TSIn, TBase{
 private:
   TStr Str;
   char* Bf;
@@ -722,7 +722,7 @@ public:
 
 /////////////////////////////////////////////////
 // Double-String
-class TDbStr{
+class TDbStr: TBase{
 public:
   TStr Str1;
   TStr Str2;
@@ -866,7 +866,7 @@ public:
 
 /////////////////////////////////////////////////
 // Number Base Template
-template <class Base> class TNum{
+template <class Base> class TNum: TBase{
 public:
   Base Val;
   TNum() : Val(0){}
@@ -955,7 +955,7 @@ public:
 
 /////////////////////////////////////////////////
 // Void
-class TVoid{
+class TVoid: TBase{
 public:
   TVoid(){}
   TVoid(TSIn&){}
@@ -971,7 +971,7 @@ public:
 
 /////////////////////////////////////////////////
 // Boolean
-class TBool{
+class TBool: TBase{
 public:
   bool Val;
 public:
@@ -1025,7 +1025,7 @@ public:
 
 /////////////////////////////////////////////////
 // Char
-class TCh{
+class TCh: TBase{
 public:
   char Val;
 public:
@@ -1090,7 +1090,7 @@ public:
 
 /////////////////////////////////////////////////
 // Unsigned-Char
-class TUCh{
+class TUCh: TBase{
 public:
   uchar Val;
 public:
@@ -1118,7 +1118,7 @@ public:
 
 /////////////////////////////////////////////////
 // Short-Integer
-class TSInt{
+class TSInt: TBase{
 public:
   int16 Val;
 public:
@@ -1134,7 +1134,7 @@ public:
 
 /////////////////////////////////////////////////
 // Integer
-class TInt{
+class TInt: TBase{
 public:
   int Val;
 public:
@@ -1239,7 +1239,7 @@ public:
 
 /////////////////////////////////////////////////
 // Unsigned-Integer
-class TUInt{
+class TUInt: TBase{
 public:
   uint Val;
 public:
@@ -1315,7 +1315,7 @@ public:
 
 /////////////////////////////////////////////////
 // Unsigned-Integer-64Bit
-class TUInt64{
+class TUInt64: TBase{
 public:
   uint64 Val;
 public:
@@ -1383,7 +1383,7 @@ public:
 
 /////////////////////////////////////////////////
 // Float
-class TFlt{
+class TFlt: TBase{
 public:
   double Val;
 public:
@@ -1495,7 +1495,7 @@ public:
 
 /////////////////////////////////////////////////
 // Short-Float
-class TSFlt{
+class TSFlt: TBase{
 public:
   sdouble Val;
 public:
@@ -1534,7 +1534,7 @@ public:
 
 /////////////////////////////////////////////////
 // Long-Float
-class TLFlt{
+class TLFlt: TBase{
 public:
   ldouble Val;
 public:
@@ -1572,7 +1572,7 @@ public:
 
 /////////////////////////////////////////////////
 // Float-Rectangle
-class TFltRect{
+class TFltRect: TBase{
 public:
   TFlt MnX, MnY, MxX, MxY;
 public:

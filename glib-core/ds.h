@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////
 // Address-Pointer
 template <class TRec>
-class TAPt{
+class TAPt: TBase{
 private:
   TRec* Addr;
 public:
@@ -29,7 +29,7 @@ public:
 /////////////////////////////////////////////////
 // Pair
 template <class TVal1, class TVal2>
-class TPair{
+class TPair: TBase{
 public:
   TVal1 Val1;
   TVal2 Val2;
@@ -127,7 +127,7 @@ public:
 /////////////////////////////////////////////////
 // Triple
 template <class TVal1, class TVal2, class TVal3>
-class TTriple{
+class TTriple: TBase{
 public:
   TVal1 Val1;
   TVal2 Val2;
@@ -216,7 +216,7 @@ public:
 /////////////////////////////////////////////////
 // Quad
 template <class TVal1, class TVal2, class TVal3, class TVal4>
-class TQuad{
+class TQuad: TBase{
 public:
   TVal1 Val1;
   TVal2 Val2;
@@ -269,7 +269,7 @@ typedef TQuad<TInt, TInt, TFlt, TFlt> TIntIntFltFltQu;
 /////////////////////////////////////////////////
 // Tuple
 template<class TVal, int NVals>
-class TTuple {
+class TTuple: TBase {
 private:
   TVal ValV [NVals];
 public:
@@ -343,7 +343,7 @@ int TTuple<TVal, NVals>::FindMn() const {
 /////////////////////////////////////////////////
 // Key-Data
 template <class TKey, class TDat>
-class TKeyDat{
+class TKeyDat: TBase{
 public:
   TKey Key;
   TDat Dat;
@@ -420,7 +420,7 @@ public:
 //#//////////////////////////////////////////////
 /// Vector is a sequence \c TVal objects representing an array that can change in size. ##TVec
 template <class TVal, class TSizeTy = int>
-class TVec{
+class TVec: TBase{
 public:
   typedef TVal* TIter;  //!< Random access iterator to \c TVal.
 protected:
@@ -1572,7 +1572,7 @@ typedef TVec<TFltV> TFltVFltV;
 //#//////////////////////////////////////////////
 /// Vector Pool. ##TVecPool
 template <class TVal, class TSizeTy=int>
-class TVecPool {
+class TVecPool: TBase {
 public:
   typedef TPt<TVecPool<TVal, TSizeTy> > PVecPool;
   typedef TVec<TVal, TSizeTy> TValV;
@@ -1823,7 +1823,7 @@ namespace TGLib_OLD {
 /////////////////////////////////////////////////
 // Vector Pool
 template<class TVal>
-class TVecPool {
+class TVecPool: TBase {
 public:
   typedef TPt<TVecPool<TVal> > PVecPool;
   typedef TVec<TVal> TValV;
@@ -2060,7 +2060,7 @@ typedef TPt<TIntVecPool> PIntVecPool;
 /////////////////////////////////////////////////
 // Vector-Pointer
 template <class TVal>
-class PVec{
+class PVec: TBase{
 private:
   TCRef CRef;
 public:
@@ -2107,7 +2107,7 @@ typedef TPt<TStrVP> PStrV;
 /////////////////////////////////////////////////
 // 2D-Vector
 template <class TVal, class TSizeTy = int>
-class TVVec{
+class TVVec: TBase{
 private:
   TInt64 XDim, YDim;
   TVec<TVal, TSizeTy> ValV;
@@ -2294,7 +2294,7 @@ typedef TVVec<TIntPr> TIntPrVV;
 /////////////////////////////////////////////////
 // 3D-Vector
 template <class TVal, class TSizeTy = int>
-class TVVVec{
+class TVVVec: TBase{
 private:
   TInt64 XDim, YDim, ZDim;
   TVec<TVal, TSizeTy> ValV;
@@ -2345,7 +2345,7 @@ typedef TVVVec<TFlt> TFltVVV;
 /////////////////////////////////////////////////
 // Tree
 template <class TVal>
-class TTree{
+class TTree: TBase{
 private:
   TVec<TTriple<TInt, TIntV, TVal> > NodeV; // (ParentNodeId, ChildNodeIdV, NodeVal)
 public:
@@ -2459,7 +2459,7 @@ typedef TTree<TStrIntStrVTr> TStrIntStrVTrTree;
 /////////////////////////////////////////////////
 // Stack
 template <class TVal>
-class TSStack{
+class TSStack: TBase{
 private:
   TVec<TVal> ValV;
 public:
@@ -2494,7 +2494,7 @@ typedef TSStack<TBoolChPr> TBoolChS;
 /////////////////////////////////////////////////
 // Queue
 template <class TVal>
-class TQQueue{
+class TQQueue: TBase{
 private:
   TInt MxLast, MxLen;
   TInt First, Last;
@@ -2562,7 +2562,7 @@ typedef TVec<TQQueue<TInt> > TIntQV;
 /////////////////////////////////////////////////
 // List-Node
 template <class TVal>
-class TLstNd{
+class TLstNd: TBase{
 public:
   TLstNd* PrevNd;
   TLstNd* NextNd;
@@ -2586,7 +2586,7 @@ public:
 /////////////////////////////////////////////////
 // List
 template <class TVal>
-class TLst{
+class TLst: TBase{
 public:
   typedef TLstNd<TVal>* PLstNd;
 private:
@@ -2779,7 +2779,7 @@ typedef TLstNd<TStr>* PStrLN;
 /////////////////////////////////////////////////
 // Record-File
 template <class THd, class TRec>
-class TFRec{
+class TFRec: TBase{
 private:
   PFRnd FRnd;
 public:
@@ -2802,7 +2802,7 @@ public:
 /////////////////////////////////////////////////
 // Function
 template <class TFuncPt>
-class TFunc{
+class TFunc: TBase{
 private:
   TFuncPt FuncPt;
 public:

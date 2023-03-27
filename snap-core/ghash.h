@@ -448,7 +448,7 @@ void TGHash<TDat>::SaveDetailTxt(const TStr& OutFNm, const TStr& Desc, const TSt
 
 //#//////////////////////////////////////////////
 /// Simple directed/undirected graph defined by its edges.
-class TSimpleGraph {
+class TSimpleGraph: TBase {
 private:
   TIntPrV EdgeV;
 public:

@@ -1006,7 +1006,7 @@ public:
 /////////////////////////////////////////////////
 // Set-Hash-Key-Iterator
 template <class TKey>
-class THashSetKeyI{
+class THashSetKeyI: TBase{
 public:
   typedef THashSetKey<TKey> TSetKey;
 private:
