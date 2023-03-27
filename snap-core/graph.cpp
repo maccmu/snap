@@ -1070,7 +1070,7 @@ void THGraph::PrintEdge(const int EId) {
     EStr += (" " + NV[i].GetStr());
   }
   EStr += "\n";
-  printf(EStr.GetCStr());
+  printf("%s", EStr.GetCStr());
 }
 
 // Print the graph in a human readable form to an output stream OutF.
