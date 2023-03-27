@@ -1,11 +1,11 @@
-# CMake project definition for Snap.
+# CMake project definition for SNAP.
 #
 # The upstream provides Makefiles for building the project. However, for
 # macposts we would like to have a CMake project for easy integration.
 
 cmake_minimum_required(VERSION 3.14)
 
-project(Snap)
+project(SNAP)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_EXTENSIONS OFF)
 find_package(OpenMP)
@@ -36,7 +36,7 @@ endif()
 
 # Tests
 
-option(SNAP_BUILD_TESTS "Build all Snap tests." OFF)
+option(SNAP_BUILD_TESTS "Build all SNAP tests." OFF)
 
 if (SNAP_BUILD_TESTS)
   include(FetchContent)
